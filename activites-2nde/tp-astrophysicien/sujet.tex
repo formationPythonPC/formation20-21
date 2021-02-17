@@ -1,0 +1,361 @@
+\documentclass[12pt]{article}
+\usepackage{fourier}
+\usepackage{mon_paquet}
+%\lhead{}\rhead{}\lfoot{}\rfoot{\LaTeXe{}}
+\usepackage{mon_ds}
+%\usepackage{ma_programmation}
+
+%graphes, physique-chimie
+%\usepackage{pst-osci}\usepackage{pst-diffraction}\usepackage{pst-circ}\usepackage{pst-dosage}\usepackage{pst-labo}\usepackage{pst-optic}\usepackage{pst-spectra,pstricks-add}\usepackage[pictex]{m-ch-en}\usepackage{m-pictex,m-ch-en}
+%\usepackage{psfrag}\usepackage{color,colortbl}\usepackage[table]{xcolor}\usepackage{graphicx}\usepackage[usenames,dvipsnames]{pstricks}\usepackage{epsfig}\usepackage{pst-grad}\usepackage{pst-plot}
+
+%mise en page, multicolonnage, paysage, tableaux maths
+%\usepackage{array}\usepackage{multirow}\usepackage{lscape}\usepackage{multido}
+
+%paquets divers, maths, encadrement, symboles, cursif, qcm,lettrine,ombrage
+%\usepackage{lettrine}\usepackage{eurosym}\usepackage{amsmath,amssymb,mathrsfs}\usepackage{esvect}\usepackage{esdiff}\usepackage{cancel}\usepackage{fancybox}\usepackage{shadow}\usepackage{pifont}\usepackage{fourier-orns}\usepackage{frcursive}\usepackage{bm}\usepackage{alterqcm}\usepackage{pstricks,pst-3d}(pour les ombres)\usepackage{enumitem}
+%\renewcommand\thesection{\Roman{section}}
+\usepackage{hyperref}
+
+\title{Profession : Astrophysicien$\cdot$ne}\author{}\date{}
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+Chercheur$\cdot$se au CNRS, vous souhaitez étudier les différentes positions des planètes Mercure et Vénus au cours du temps. 
+
+Pour cela, votre équipe a déjà compilé %à partir du site \url{http://vo.imcce.fr/webservices/miriade/?forms} 
+les différentes coordonnées des planètes autour du Soleil, dans un fichier : \href{https://github.com/formationPythonPC/formation20-21/activites-2nde/tp-astrophysicien/donnees-planetes.csv}{\underline{\texttt{donnees-planetes.csv}}}.
+
+\medskip
+Un traitement par un langage de programmation (ici Python), permettra de visualiser les trajectoires des deux corps.
+
+\medskip
+Votre objectif est de modifier (et/ou) compléter ce programme pour obtenir la visualisation la plus intéressante possible pour votre étude.
+
+
+
+
+\subsection{Le fichier de données}
+
+Vous vous penchez d'abord sur le fichier que vous a transmis votre équipe :\href{https://github.com/formationPythonPC/formation20-21/activites-2nde/tp-astrophysicien/donnees-planetes.csv}{\underline{\texttt{donnees-planetes.csv}}}. \texttt{Clic droit} $\rightarrow$ \texttt{Edit with Notepad++}. Observez son contenu.
+
+\begin{enumerate}
+ \item \app Qu'est-ce qui est représenté dans ce fichier ? \ajapp{1}%
+ \item \app La période d'échantillonnage est \underline{le temps entre deux lignes de mesures}. Que vaut la période d'échantillonnage des données de ce fichier ?\ajapp{1}
+ \item \ar\rea En observant la globalité du fichier, trouvez le nombre de jours au cours desquels la position des planètes est décrite par ce fichier.\ajar{0.5}\ajrea{1} 
+\end{enumerate}
+
+
+
+
+
+\subsection{Positions de Mercure}
+
+Ouvrez (double-clic) à présent le fichier \href{https://github.com/formationPythonPC/formation20-21/activites-2nde/tp-astrophysicien/positions-planetes.py}{\underline{\texttt{positions-planetes.py}}}. Compilez-le (flèche verte) pour voir ce qu'il produit.
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+ \item \app Qu'est-ce qui apparaît sur le graphe ?\ajapp{1}
+ 
+ \item \app \ar Quelle est l'unité utilisée sur les axes du graphe ? 
+ 
+ Quel est l'intérêt de cette unité ? \ajapp{0.5}\ajar{0.5}
+
+ \item\ar \com Modifiez l'échelle choisie afin de "zoomer" sur le graphe. \ajar{1}\ajcom{1}\cpdepce
+ 
+ 
+ %\item \rco \app Quel référentiel a été choisi pour étudier le mouvement ?\ajrco{0.5}\ajapp{0.5}
+ 
+ %Où est placé l'observateur du mouvement ? Quel est l'astre immobile par rapport à cet observateur ? Justifiez. \ajrco{0.5}\ajapp{0.5}% à modifier si ont fait référentiel : quel est le référentiel de ce mouvement
+ 
+ \item \app \ar À quoi sert la commande ligne 58 ? Comment traduiriez vous les arguments dans la parenthèse de \texttt{plt.plot(\ldots)}. \ajapp{0.5}\ajar{1}% 5 arguments à 0,2 chacun
+
+ \item\ar \va À quoi sert le paramètre de la ligne 22 ? Et le paramètre de la ligne 25 ? Comment vérifier vos hypothèses ?\ajar{1} \ajva{2}\cpdepce
+
+ \begin{center}
+\fbox{\textsc{appel prof. 1}}                           
+\end{center}
+ 
+ 
+ \item \ar \va Afin d'étudier plus précisément le mouvement de Mercure, vous avez besoin de suffisamment de points du mouvement ; mais pour ne pas surcharger le processeur de l'ordinateur par trop de calculs, il n'en faut pas trop non plus. 
+ 
+Comment pouvez-vous modifier votre programme lignes 22 et 25 pour respecter ces deux contraintes ?  Notez vos modifications sur votre compte-rendu. \ajar{1}\ajva{1}
+
+ \begin{center}
+\fbox{\textsc{appel prof. 2}}                           
+\end{center}
+
+
+
+
+\item \ar\va Un de vos collègues estime  que  l'année sur Mercure dure à peu près 88 jours.
+
+Servez-vous du programme et des questions précédentes pour savoir si son hypothèse est correcte. \ajar{1}\ajva{1}
+
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+\subsection{Et Vénus ? (Bonus 1)}
+
+
+
+Vous souhaitez à présent visualiser les positions de Mercure \underline{et de Vénus} sur le graphe.
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+\item\app \ar \com Servez-vous des lignes 50 à 61 pour représenter (ligne 64) les positions de Vénus au cours du temps.
+
+\begin{center}
+\danger \ \ \textsc{Vénus est plus éloignée du Soleil que Mercure}\ \ \danger                                                                            \end{center}
+
+\ajapp{1}\ajar{1}\ajcom{1}\cpdepce
+
+
+
+ \begin{center}
+\fbox{\textsc{appel prof. 3}}                           
+\end{center}
+
+
+
+\item \rea \com Vénus est environ 2,5 fois plus grosse que Mercure. Modifiez la commande précédente afin de tenir compte de la taille relative de ces deux planètes. \ajrea{0.5}\ajcom{0.5}
+
+\item \ar Que constatez-vous ?\ajar{1} % si n'ont pas changé les échelles temps pour avoir 1 période e Mercure, ça ne fait pas le tour ; de plus, ça sort du graphe
+
+
+\item \com "Dézoomez" afin d'avoir plus de recul sur la vision des deux trajectoires. \ajcom{1}\cpdepce% plt.xlim
+
+ \begin{center}
+\fbox{\textsc{appel prof. 4}}                           
+\end{center}
+
+
+
+\item \ar Combien de temps dure l'année sur Vénus ? \ajar{1}\ajva{1}% modif de nb_jours jusqu' à avoir un tour
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+ \bigskip
+
+
+
+\subsection{Des planètes en mouvement (Bonus 2)}
+
+
+On peut aussi tenter de visualiser les planètes en mouvement. 
+
+\smallskip
+Observez et compilez le programme \href{https://github.com/formationPythonPC/formation20-21/activites-2nde/tp-astrophysicien/mouvements-planetes.py}{\underline{\texttt{mouvements-planetes.py}}}.
+
+\smallskip
+Vous disposez de deux types de modélisation : "avec effacement" ou "sans effacement".
+
+\smallskip
+Pour tester chacune des modélisations, il faut commenter l'autre pour que Python ne la prenne pas en compte ; placez des triples guillemets """ avant et après la partie que vous souhaitez commenter.
+
+\begin{enumerate}
+ \item \ar Quelle semble être la planète la plus rapide ?\ajar{0.5}
+ 
+ \item \ar À quel(s) endroits(s) de la trajectoire la vitesse des planètes semble être la plus grande ? Pourquoi à votre avis ?\ajar{1}
+ 
+ \item \ar À quel(s) endroits(s) de la trajectoire la vitesse des planètes semble être la plus petite ? Pourquoi à votre avis ?\ajar{1}
+ 
+ \medskip
+ Pour la suite, vous utilisez la première modélisation (sans mouvement, fichier \href{https://github.com/formationPythonPC/formation20-21/activites-2nde/tp-astrophysicien/mouvements-planetes.py}{\underline{\texttt{positions-planetes.py}}}.
+ 
+ \medskip
+ \item \app Combien s'écoule-t-il de temps entre chaque position des planètes ?\ajapp{1}%ligne 18
+
+ \item \ar \va Comment peut-on se servir de cela pour vérifier vos hypothèses des questions 2 et 3 ? \ajar{1}\ajva{1}% meme temps entre chaque position et distance + gde parcourue ou distance + petite parcourue
+
+ \item \rea Trouvez une méthode pour calculer la vitesse moyenne des deux planètes. Votre hypothèse de la question 1 est-elle correcte ?\ajrea{2} \cpdepce %formule v=d/t // d=2piR // t = voir questions 10 et 15   //      
+ 
+ \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Bonus -- Des planètes en mouvement}
+
+On peut aussi tenter de visualiser les planètes en mouvement. 
+
+Observez et compilez le programme \underline{"\texttt{mouvements-planetes.py}"}.
+
+\smallskip
+Vous disposez de deux types de modélisation : "avec effacement" ou "sans effacement".
+
+\smallskip
+Pour tester chacune des modélisations, il faut commenter l'autre pour que Python ne la prenne pas en compte ; placez des triples guillemets """ avant et après la partie que vous souhaitez commenter.
+
+\begin{enumerate}
+\setcounter{enumi}{15}
+ \item \ar Quelle semble être la planète la plus rapide ?\ajar{0.5}
+ 
+ \item \ar À quel(s) endroits(s) de la trajectoire la vitesse des planètes semble être la plus grande ? Pourquoi à votre avis ?\ajar{1}
+ 
+ \item \ar À quel(s) endroits(s) de la trajectoire la vitesse des planètes semble être la plus petite ? Pourquoi à votre avis ?\ajar{1}
+ 
+ \medskip
+ Pour la suite, vous utilisez la première modélisation (sans mouvement, fichier \underline{"\texttt{positions-planetes.py}"}).
+ 
+ \medskip
+ \item \app Combien s'écoule-t-il de temps entre chaque position des planètes ?\ajapp{1}%ligne 18
+
+ \item \ar \va Comment peut-on se servir de cela pour vérifier vos hypothèses des questions 17 et 18 ? \ajar{1}\ajva{1}% meme temps entre chaque position et distance + gde parcourue ou distance + petite parcourue
+
+ \item \rea Trouvez une méthode pour calculer la vitesse moyenne des deux planètes. Votre hypothèse de la question 16 est-elle correcte ?\ajrea{2} \cpdepce %formule v=d/t // d=2piR // t = voir questions 10 et 15   //      
+ 
+ \end{enumerate}
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Bonus -- Des planètes en mouvement}
+
+On peut aussi tenter de visualiser les planètes en mouvement. 
+
+Observez et compilez le programme \underline{"\texttt{mouvements-planetes.py}"}.
+
+\smallskip
+Vous disposez de deux types de modélisation : "avec effacement" ou "sans effacement".
+
+\smallskip
+Pour tester chacune des modélisations, il faut commenter l'autre pour que Python ne la prenne pas en compte ; placez des triples guillemets """ avant et après la partie que vous souhaitez commenter.
+
+\begin{enumerate}
+\setcounter{enumi}{15}
+ \item \ar Quelle semble être la planète la plus rapide ?\ajar{0.5}
+ 
+ \item \ar À quel(s) endroits(s) de la trajectoire la vitesse des planètes semble être la plus grande ? Pourquoi à votre avis ?\ajar{1}
+ 
+ \item \ar À quel(s) endroits(s) de la trajectoire la vitesse des planètes semble être la plus petite ? Pourquoi à votre avis ?\ajar{1}
+ 
+ \medskip
+ Pour la suite, vous utilisez la première modélisation (sans mouvement, fichier \underline{"\texttt{positions-planetes.py}"}).
+ 
+ \medskip
+ \item \app Combien s'écoule-t-il de temps entre chaque position des planètes ?\ajapp{1}%ligne 18
+
+ \item \ar \va Comment peut-on se servir de cela pour vérifier vos hypothèses des questions 17 et 18 ? \ajar{1}\ajva{1}% meme temps entre chaque position et distance + gde parcourue ou distance + petite parcourue
+
+ \item \rea Trouvez une méthode pour calculer la vitesse moyenne des deux planètes. Votre hypothèse de la question 16 est-elle correcte ?\ajrea{2} \cpdepce %formule v=d/t // d=2piR // t = voir questions 10 et 15   //      
+ 
+ \end{enumerate}
+
+
+
+
+
+ 
+
+
+
+
+
