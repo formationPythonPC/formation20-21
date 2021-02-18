@@ -1,0 +1,163 @@
+%\href{https://github.com/formationPythonPC/formation20-21/tree/master/activites-2nde/tp-astrophysicien/donnees-planetes.csv}{\underline{\texttt{donnees-planetes.csv}}}
+\documentclass[12pt]{article}
+\usepackage{fourier}
+\usepackage{mon_paquet}
+\usepackage{hyperref}
+%\lhead{}\rhead{}\lfoot{}\rfoot{\LaTeXe{}}
+\usepackage{mon_ds}
+%\usepackage{ma_programmation}
+
+%graphes, physique-chimie
+%\usepackage{pst-osci}\usepackage{pst-diffraction}\usepackage{pst-circ}\usepackage{pst-dosage}\usepackage{pst-labo}\usepackage{pst-optic}\usepackage{pst-spectra,pstricks-add}\usepackage[pictex]{m-ch-en}\usepackage{m-pictex,m-ch-en}
+%\usepackage{psfrag}\usepackage{color,colortbl}\usepackage[table]{xcolor}\usepackage{graphicx}\usepackage[usenames,dvipsnames]{pstricks}\usepackage{epsfig}\usepackage{pst-grad}\usepackage{pst-plot}
+
+%mise en page, multicolonnage, paysage, tableaux maths
+%\usepackage{array}\usepackage{multirow}\usepackage{lscape}\usepackage{multido}
+
+%paquets divers, maths, encadrement, symboles, cursif, qcm,lettrine,ombrage
+%\usepackage{lettrine}\usepackage{eurosym}\usepackage{amsmath,amssymb,mathrsfs}\usepackage{esvect}\usepackage{esdiff}\usepackage{cancel}\usepackage{fancybox}\usepackage{shadow}\usepackage{pifont}\usepackage{fourier-orns}\usepackage{frcursive}\usepackage{bm}\usepackage{alterqcm}\usepackage{pstricks,pst-3d}(pour les ombres)\usepackage{enumitem}
+%\renewcommand\thesection{\Roman{section}}
+
+
+\title{Du sport dans toutes les dimensions}\author{}\date{}
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\section{D'abord\ldots de l'athlétisme}
+
+\subsection{Le mouvement d'Usain Bolt}
+On revient tout d'abord sur le record du monde du 100 mètres d'Usain Bolt.
+
+\begin{enumerate}
+\item \rco Revisionnez \href{https://github.com/formationPythonPC/formation20-21/tree/master/activites-2nde/3-tp-sports/Bolt2.avi}{\underline{\texttt{la vidéo}}}; comment peut-on qualifier le mouvement d'Usain Bolt lors de la course ?\ajrco{2}
+\end{enumerate}
+
+
+\subsection{La vitesse d'Usain Bolt}
+%\href{https://github.com/formationPythonPC/formation20-21/tree/master/activites-2nde/3-tp-sports/Bolt2.avi}{\underline{\texttt{la vidéo}}}
+Ouvrez à présent le fichier  \href{https://github.com/formationPythonPC/formation20-21/tree/master/activites-2nde/3-tp-sports/bolt.py}{\underline{\texttt{bolt.py}}}.
+\begin{enumerate}
+ \setcounter{enumi}{1}
+ 
+ \item \app Quelle ligne du programme permet de représenter la trajectoire d'Usain Bolt ?\ajapp{1}
+ 
+  \item \ar \rea Rappelez comment calculer la valeur de la vitesse d'Usain Bolt au 6\textsuperscript{ème} point de la trajectoire ? 
+ 
+ Réalisez ce calcul. \ajar{1}\ajrea{1} 
+ \cpdepce
+
+ \begin{center}
+  \fbox{\textsc{appel prof. 1}}
+ \end{center}
+ 
+ 
+ \medskip
+ 
+ \item \app \com En utilisant les listes \texttt{X} et \texttt{T} du programme, trouvez et complétez la formule permettant de retrouver ce résultat ligne 55 : \texttt{vx = \ldots}. \hspace{1cm}\danger\ \textsl{Votre formule ne doit contenir aucun chiffre} \danger\hspace{1cm}
+ 
+ \cpdepce
+
+ 
+ 
+ \ajapp{1}\ajcom{1}
+ 
+ 
+ % que les listes X et T et les indices de ces listes
+  %Python numérote à partir de l'\textit{indice} "0"  : ainsi le 3\textsuperscript{ème} point de la liste \texttt{X} a pour indice 2 et il s'écrit \texttt{X[2]}.
+ 
+ \medskip
+ 
+ \item \rea\com Faites afficher ce résultat et son unité sur la console en écrivant la commande adéquate ligne 63. \ajrea{0.5}\ajcom{0.5}
+ 
+
+ \item \ar Selon vous, quelle serait l'allure du vecteur vitesse au 6\textsuperscript{ème} point de la trajectoire ?\ajar{1}
+ 
+ 
+ \item \ar \com \va On souhaite représenter le vecteur vitesse au 6\textsuperscript{ème} point de la trajectoire. Complétez les lignes 68 à 71 sachant que :
+ \begin{itemize}
+  \item \tt{x} représente l'abscisse du 6\textsuperscript{ème} point de la trajectoire
+  \item \tt{y} représente l'abscisse du 6\textsuperscript{ème} point de la trajectoire
+  \item \tt{vx} représente la vitesse selon l'axe des abscisses du 6\textsuperscript{ème} point de la trajectoire
+  \item \tt{vy} représente la vitesse selon l'axe des ordonnées du 6\textsuperscript{ème} point de la trajectoire
+  \end{itemize}
+\ajar{1}\ajcom{2}
+
+\cpdepce
+
+$\Longrightarrow$ Décommentez alors toutes les lignes 68 à 71 ainsi que la ligne 74. À quoi sert cette ligne ? Que pensez-vous du résultat obtenu ?\ajva{2}
+
+ \begin{center}
+  \fbox{\textsc{appel prof. 2}}
+ \end{center}
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+\section{Et maintenant \ldots du basket}
+
+Visionnez la vidéo \href{https://github.com/formationPythonPC/formation20-21/tree/master/activites-2nde/3-tp-sports/basket.avi}{\underline{\texttt{basket.avi}}}. Une chronophotographie de cette vidéo a été réalisée, on a obtenu les données du fichier \href{https://github.com/formationPythonPC/formation20-21/tree/master/activites-2nde/3-tp-sports/donnees-basket2.csv}{\underline{\texttt{donnees-basket2.csv}}}.
+
+\subsection{Données de la chronophotographie}
+\begin{enumerate}
+ \setcounter{enumi}{7}
+ \item \rco Quel est le référentiel associé à l'étude du mouvement du ballon ?\ajrco{1}
+ \item \app Ouvrez le fichier de données ; quelles sont les informations qu'il contient ?\ajapp{1}
+ \item \app Que vaut la période d'échantillonnage des mesures de la chronophotographie ?\ajapp{1}
+\end{enumerate}
+
+\subsection{Un lancer franc}
+\begin{enumerate}
+ \setcounter{enumi}{10}
+ \item \app \com \va Ouvrez à présent le fichier \href{https://github.com/formationPythonPC/formation20-21/tree/master/activites-2nde/3-tp-sports/trajectoire.py}{\underline{\texttt{trajectoire.py}}}. Entrez à la ligne 10 la commande permettant de représenter les points de la chronophotographie sur le graphe. Comment vérifiez votre réponse ? \ajapp{0.5}\ajcom{1}\ajva{0.5}
+ 
+ \item \ar \com En vous servant de ce qui a été fait précédemment, tracez sur le graphe le vecteur vitesse au premier point de la trajectoire. Votre commande sera rentrée ligne 27.
+
+ \textsc{note :} lors de l'utilisation de la fonction \tt{quiver}, on choisira un facteur d'échelle de 18 : \tt{scale = 18}
+ 
+ \cpdepce
+ 
+ \ajar{1}\ajcom{1}
+ 
+ 
+  \begin{center}
+  \fbox{\textsc{appel prof. 3}}
+ \end{center}
+
+ 
+ 
+ 
+\item \ar \com \va Les lignes 30 et 31 permettront de tracer tous les vecteurs vitesse pour tous les points où cela est possible ; la variable \tt{i} corespondant à l'indice du point où on trace le vecteur.
+
+Complétez le programme ligne 31 pour obtenir le tracé de tous les vecteurs vitesse des points de la trajectoire.
+
+
+  \begin{center}
+  \fbox{\textsc{appel prof. 4}}
+ \end{center}
+
+
+$\Longrightarrow$ le résultat obtenu vous semble-t-il cohérent ?
+ 
+ \end{enumerate}
+
+
+\grilleDS
+
+
+\end{document}
+
+% la grille de fin si DS
+\grilleDS
+
+
+
+
+
